@@ -16,23 +16,23 @@ const HeroSection = () => {
       {/* Background Image with High-Intensity Industrial Overlay */}
       <div className="absolute inset-0 z-0">
         {/* Fallback gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.15),transparent_50%)]"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900"></div> */}
+        {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.15),transparent_50%)]"></div> */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(30,58,138,0.2),transparent_50%)]"></div>
 
         {/* Image overlay (will show when image is added) */}
         <img
-          src="/images/hero-bg.jpg"
+          src="/images/3333.png"
           alt="Industrial Steel and Iron Pipe Manufacturing"
           className="w-full h-full object-cover opacity-90 object-center scale-100"
           onError={(e) => { e.currentTarget.style.display = 'none'; }}
         />
 
       
-        <div className="absolute inset-0 bg-blue-950/40 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1222] via-[#0B1222]/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1222] via-transparent to-[#0B1222]/40"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(37,99,235,0.15),transparent_70%)]"></div>
+        {/* <div className="absolute inset-0 bg-blue-950/40 mix-blend-multiply"></div> */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1222] via-[#0B1222]/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1222] via-transparent to-[#0B1222]/30"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_90%,rgba(37,99,235,0.15),transparent_0%)]"></div>
       </div>
 
       {/* Main Content Container */}
@@ -87,6 +87,9 @@ const HeroSection = () => {
           </button>
 
         </div>
+                  
+
+                  
 
       </div>
 
