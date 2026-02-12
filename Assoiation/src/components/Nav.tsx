@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
@@ -7,6 +7,16 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for shadow
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Map language codes to display names
   const languages: { [key: string]: string } = {
@@ -18,92 +28,117 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-70">
-      <div className="bg-[#0B1222]/2 backdrop-blur-md text-white py-4 md:py-5 flex items-center justify-between px-4 md:px-[60px] border-b border-white/5 relative">
-        {/* Left: Association Name */}
-        <Link to="/" className="text-lg md:text-2xl font-bold tracking-tight flex items-center gap-3">
-          <div className="w-[50px] h-[50px] rounded-full overflow-hidden bg-white/10 flex items-center justify-center border border-white/10">
+    <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+      <div 
+        className={`bg-white text-gray-800 py-3 px-6 md:px-8 flex items-center justify-between w-full max-w-7xl rounded-full transition-all duration-300 ${
+          scrolled ? 'shadow-lg' : 'shadow-md'
+        }`}
+      >
+        {/* Left: Association Name/Logo */}
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-[40px] h-[40px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+             {/* Using a placeholder icon/text until logo is confirmed for light bg */}
             <img 
               className="w-full h-full object-cover" 
               src="/images/logo.jpeg" 
               alt="Logo"
-              style={{ maskImage: 'radial-gradient(circle, black 68%, transparent 70%)', WebkitMaskImage: 'radial-gradient(circle, black 68%, transparent 70%)' }}
             />
           </div>
-          <span className="font-serif tracking-widest text-shadow-sm">ASSOCIATION</span>
+          <div className="flex flex-col leading-tight">
+            <span className="font-black text-blue-900 tracking-tighter text-lg">UAMC</span>
+            <span className="text-[10px] font-bold text-gray-500 tracking-[0.2em]">AFGHANISTAN</span>
+          </div>
         </Link>
+        
         {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-10 text-sm font-bold uppercase tracking-widest">
+        <ul className="hidden md:flex items-center gap-8 text-sm font-bold text-gray-600">
           <li>
-            <Link to="/" className="hover:text-red-500 transition-colors duration-300">{t('home')}</Link>
+            <Link to="/" className="hover:text-blue-600 transition-colors duration-300">{t('home')}</Link>
           </li>
           <li>
-            <a href="#about" className="hover:text-red-500 transition-colors duration-300">{t('about_us')}</a>
+            <a href="#about" className="hover:text-blue-600 transition-colors duration-300">{t('about_us')}</a>
           </li>
           <li>
-            <Link to="/members" className="hover:text-red-500 transition-colors duration-300">{t('companies')}</Link>
+            <Link to="/members" className="hover:text-blue-600 transition-colors duration-300">{t('companies')}</Link>
           </li>
           <li>
-            <a href="/#contact" className="hover:text-red-500 transition-colors duration-300">{t('contact')}</a>
+             {/* Language Dropdown for Desktop */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                className="flex items-center gap-1 hover:text-blue-600 transition-colors focus:outline-none"
+              >
+                <Globe size={16} />
+                <span className="uppercase">{language}</span>
+                <ChevronDown size={14} className={`transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              {isLangDropdownOpen && (
+                <div className="absolute top-full right-0 mt-4 w-32 bg-white border border-gray-100 rounded-xl shadow-xl py-2 flex flex-col z-50 overflow-hidden">
+                  {(Object.keys(languages) as Array<keyof typeof languages>).map((langCode) => (
+                    <button
+                      key={langCode}
+                      onClick={() => {
+                        setLanguage(langCode as 'en' | 'da' | 'ps');
+                        setIsLangDropdownOpen(false);
+                      }}
+                      className={`text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${language === langCode ? 'text-blue-600 font-bold' : 'text-gray-600'}`}
+                    >
+                      {languages[langCode]}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </li>
         </ul>
 
-        {/* Desktop Language Dropdown */}
-        <div className="hidden md:flex relative ml-4 items-center">
-          <button 
-            onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-            className="flex items-center gap-1 text-sm font-bold uppercase tracking-widest hover:text-red-500 transition-colors focus:outline-none text-white"
-          >
-            <Globe size={18} />
-            <span className="hidden lg:inline">{languages[language]}</span>
-            <ChevronDown size={14} className={`transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
-          </button>
-
-          {isLangDropdownOpen && (
-            <div className="absolute top-full right-0 mt-4 w-32 bg-black/90 backdrop-blur-xl border border-white/10 rounded-none shadow-xl py-2 flex flex-col z-50">
-              {(Object.keys(languages) as Array<keyof typeof languages>).map((langCode) => (
-                <button
-                  key={langCode}
-                  onClick={() => {
-                    setLanguage(langCode as 'en' | 'da' | 'ps');
-                    setIsLangDropdownOpen(false);
-                  }}
-                  className={`text-left px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/10 transition-colors ${language === langCode ? 'text-red-500 font-bold' : ''}`}
-                >
-                  {languages[langCode]}
-                </button>
-              ))}
-            </div>
-          )}
+         {/* Right: Contact Button */}
+        <div className="hidden md:block">
+           <a 
+            href="/#contact" 
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+           >
+             {t('contact')}
+           </a>
         </div>
 
         {/* Mobile Hamburger Button */}
         <button 
           onClick={toggleMenu}
-          className="md:hidden p-2 text-white hover:text-red-500 transition-colors"
+          className="md:hidden p-2 text-gray-800 hover:text-blue-600 transition-colors"
           aria-label="Toggle menu"
         >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Mobile Dropdown Menu */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-white/10 p-6 shadow-2xl md:hidden animate-in fade-in slide-in-from-top-2 duration-300">
-            <ul className="flex flex-col gap-6 text-center text-sm font-bold uppercase tracking-[0.2em]">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl p-6 shadow-2xl md:hidden animate-in fade-in slide-in-from-top-2 duration-300 border border-gray-100 mx-4">
+            <ul className="flex flex-col gap-4 text-center text-sm font-bold text-gray-800">
               <li>
                 <Link 
                   to="/" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-red-500 transition-colors border-b border-white/5"
+                  className="block py-3 hover:text-blue-600 transition-colors border-b border-gray-100"
                 >
                   {t('home')}
                 </Link>
               </li>
               <li>
+                <a 
+                  href="#about" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block py-3 hover:text-blue-600 transition-colors border-b border-gray-100"
+                >
+                  {t('about_us')}
+                </a>
+              </li>
+              <li>
                 <Link 
                   to="/members" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-red-500 transition-colors border-b border-white/5"
+                  className="block py-3 hover:text-blue-600 transition-colors border-b border-gray-100"
                 >
                   {t('companies')}
                 </Link>
@@ -112,7 +147,7 @@ export default function Navbar() {
                 <a 
                   href="/#contact" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-red-500 transition-colors"
+                  className="block py-3 text-blue-600"
                 >
                   {t('contact')}
                 </a>
@@ -120,29 +155,23 @@ export default function Navbar() {
             </ul>
             
             {/* Mobile Language Selection */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex flex-col items-center gap-4">
-              <div className="flex items-center gap-2 text-gray-400 text-sm uppercase tracking-wider font-bold">
-                <Globe size={16} />
-                <span>{t('select_language')}</span>
-              </div>
-              <div className="flex gap-4">
-                {(Object.keys(languages) as Array<keyof typeof languages>).map((langCode) => (
-                  <button
-                    key={langCode}
-                    onClick={() => {
-                      setLanguage(langCode as 'en' | 'da' | 'ps');
-                      setIsMenuOpen(false);
-                    }}
-                    className={`px-3 py-1 rounded-sm text-xs font-bold uppercase tracking-widest border transition-all ${
-                      language === langCode 
-                        ? 'bg-red-500/10 border-red-500 text-red-500' 
-                        : 'border-white/10 text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    {languages[langCode].substring(0, 3)}
-                  </button>
-                ))}
-              </div>
+            <div className="mt-6 pt-6 border-t border-gray-100 flex justify-center gap-4">
+              {(Object.keys(languages) as Array<keyof typeof languages>).map((langCode) => (
+                <button
+                  key={langCode}
+                  onClick={() => {
+                    setLanguage(langCode as 'en' | 'da' | 'ps');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
+                    language === langCode 
+                      ? 'bg-blue-600 text-white shadow-md' 
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  {langCode}
+                </button>
+              ))}
             </div>
           </div>
         )}
