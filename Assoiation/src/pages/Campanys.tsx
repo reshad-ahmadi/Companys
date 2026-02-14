@@ -86,17 +86,17 @@ export default function TaxationServices() {
             }`}
           >
             {/* Background */}
-            <div className="absolute inset-0 bg-black/70 z-0"></div>
+            <div className="absolute inset-0 bg-black/40 z-0"></div>
             <div 
               className="absolute inset-0 bg-cover bg-center -z-10 transition-transform duration-[10000ms]"
               style={{ 
                 backgroundImage: `url(${backgroundImages[index]})`,
-                filter: 'brightness(0.25)',
+                filter: 'brightness(0.5)',
                 transform: index === currentPage ? 'scale(1.1)' : 'scale(1)'
               }}
             ></div>
 
-            <div className="relative z-10 text-center max-w-4xl px-4 flex flex-col items-center">
+            <div className="relative z-10 text-center max-w-4xl 2xl:max-w-7xl px-4 flex flex-col items-center">
               {/* Title Section */}
               {Array.isArray(page.title) ? (
                 <div className="mb-8 md:mb-4 flex flex-col items-center">
@@ -121,15 +121,15 @@ export default function TaxationServices() {
 
               {/* Description Section */}
               {Array.isArray(page.desc) ? (
-                <div className="max-w-3xl md:max-w-md mx-auto space-y-6 md:space-y-1 mt-5 md:mt-[30px]">
+                <div className="max-w-3xl md:max-w-md 2xl:max-w-5xl mx-auto space-y-6 md:space-y-1 2xl:space-y-4 mt-5 md:mt-[30px] 2xl:mt-[50px]">
                   {page.desc.map((paragraph, i) => (
-                    <p key={i} className="text-[13px] sm:text-base md:text-[14px] lg:text-[18px] 2xl:text-[26px] text-gray-300 leading-relaxed md:leading-snug text-center font-medium opacity-90">
+                    <p key={i} className="text-[13px] sm:text-base md:text-[14px] lg:text-[18px] 2xl:text-[36px] text-gray-300 leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90">
                       {paragraph}
                     </p>
                   ))}
                 </div>
               ) : (
-                <p className="text-[13px] sm:text-base md:text-[16px] lg:text-[18px] 2xl:text-[26px] text-gray-300 max-w-3xl md:max-w-md mx-auto leading-relaxed md:leading-snug text-center font-medium opacity-90 mt-5 md:mt-[30px]">
+                <p className="text-[13px] sm:text-base md:text-[16px] lg:text-[18px] 2xl:text-[36px] text-gray-300 max-w-3xl md:max-w-md 2xl:max-w-5xl mx-auto leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90 mt-5 md:mt-[30px] 2xl:mt-[50px]">
                   {page.desc}
                 </p>
               )}

@@ -4,11 +4,14 @@ import Navbar from '../components/Nav';
 import Footer from '../components/Footer';
 import Navigation from '../components/navigation';
 import { useLanguage } from '../context/LanguageContext';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Companies() {
   const [companies, setCompanies] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const { t } = useLanguage();
+  const headerAnimation = useScrollAnimation();
+  const gridAnimation = useScrollAnimation();
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -32,7 +35,12 @@ export default function Companies() {
       
       <main className="pt-32 pb-20 px-4 md:px-[70px]">
         {/* Header */}
-        <div className="max-w-7xl mx-auto mb-16 text-center">
+        <div 
+          ref={headerAnimation.ref}
+          className={`max-w-7xl mx-auto mb-16 text-center transition-all duration-1000 ${
+            headerAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <span className="text-gray-500 text-sm tracking-[0.2em] uppercase mb-4 block">{t('our_members')}</span>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
             {t('leading')} <span className="text-brand-primary">{t('companies_highlight')}</span>
@@ -63,7 +71,12 @@ export default function Companies() {
         </div>
 
         {/* Grid */}
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          ref={gridAnimation.ref}
+          className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-1000 delay-150 ${
+            gridAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {loading ? (
              <div className="col-span-full py-20 text-center text-gray-500 uppercase tracking-widest text-sm animate-pulse">
                 {t('loading_units')}

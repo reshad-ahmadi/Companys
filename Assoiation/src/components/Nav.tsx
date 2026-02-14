@@ -28,15 +28,15 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+    <nav className="fixed top-4 2xl:top-10 left-0 right-0 z-50 flex justify-center px-4 2xl:px-20">
       <div 
-        className={`bg-white text-gray-800 py-3 px-6 md:px-8 flex items-center justify-between w-full max-w-7xl rounded-full transition-all duration-300 ${
+        className={`bg-white text-gray-800 py-3 2xl:py-8 px-6 md:px-8 2xl:px-20 flex items-center justify-between w-full max-w-7xl 2xl:max-w-[2200px] rounded-full transition-all duration-300 ${
           scrolled ? 'shadow-lg' : 'shadow-md'
         }`}
       >
         {/* Left: Association Name/Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-[40px] h-[40px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+        <Link to="/" className="flex items-center gap-3 2xl:gap-5 group">
+          <div className="w-[40px] h-[40px] 2xl:w-[65px] 2xl:h-[65px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
              {/* Using a placeholder icon/text until logo is confirmed for light bg */}
             <img 
               className="w-full h-full object-cover" 
@@ -45,63 +45,54 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-black text-blue-900 tracking-tighter text-lg">UAMC</span>
-            <span className="text-[10px] font-bold text-gray-500 tracking-[0.2em]">AFGHANISTAN</span>
+            <span className="font-black text-blue-900 tracking-tighter text-lg 2xl:text-3xl">UAMC</span>
+            <span className="text-[10px] 2xl:text-[16px] font-bold text-gray-500 tracking-[0.2em]">AFGHANISTAN</span>
           </div>
         </Link>
         
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex items-center gap-8 text-sm font-bold text-gray-600">
+        {/* Desktop Menu - Centered */}
+        <ul className="hidden md:flex items-center gap-8 2xl:gap-14 text-sm 2xl:text-xl font-bold text-gray-600 absolute left-1/2 transform -translate-x-1/2">
           <li>
             <Link to="/" className="hover:text-blue-600 transition-colors duration-300">{t('home')}</Link>
           </li>
           <li>
-            <a href="#about" className="hover:text-blue-600 transition-colors duration-300">{t('about_us')}</a>
+            <Link to="/about" className="hover:text-blue-600 transition-colors duration-300">{t('about_us')}</Link>
           </li>
           <li>
             <Link to="/members" className="hover:text-blue-600 transition-colors duration-300">{t('companies')}</Link>
           </li>
-          <li>
-             {/* Language Dropdown for Desktop */}
-            <div className="relative">
-              <button 
-                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center gap-1 hover:text-blue-600 transition-colors focus:outline-none"
-              >
-                <Globe size={16} />
-                <span className="uppercase">{language}</span>
-                <ChevronDown size={14} className={`transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {isLangDropdownOpen && (
-                <div className="absolute top-full right-0 mt-4 w-32 bg-white border border-gray-100 rounded-xl shadow-xl py-2 flex flex-col z-50 overflow-hidden">
-                  {(Object.keys(languages) as Array<keyof typeof languages>).map((langCode) => (
-                    <button
-                      key={langCode}
-                      onClick={() => {
-                        setLanguage(langCode as 'en' | 'da' | 'ps');
-                        setIsLangDropdownOpen(false);
-                      }}
-                      className={`text-left px-4 py-2 text-sm hover:bg-gray-50 transition-colors ${language === langCode ? 'text-blue-600 font-bold' : 'text-gray-600'}`}
-                    >
-                      {languages[langCode]}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          </li>
         </ul>
 
-         {/* Right: Contact Button */}
-        <div className="hidden md:block">
-           <a 
-            href="/#contact" 
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
-           >
-             {t('contact')}
-           </a>
+        {/* Language Dropdown - Right Side */}
+        <div className="hidden md:block relative">
+          <button 
+            onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 2xl:px-10 py-2.5 2xl:py-4 rounded-full text-sm 2xl:text-xl font-bold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+          >
+            <Globe className="w-4 h-4 2xl:w-6 2xl:h-6" />
+            <span className="uppercase">{language}</span>
+            <ChevronDown className={`w-3.5 h-3.5 2xl:w-5 2xl:h-5 transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
+          </button>
+
+          {isLangDropdownOpen && (
+            <div className="absolute top-full right-0 mt-4 2xl:mt-6 w-32 2xl:w-48 bg-white border border-gray-100 rounded-xl 2xl:rounded-2xl shadow-xl py-2 flex flex-col z-50 overflow-hidden">
+              {(Object.keys(languages) as Array<keyof typeof languages>).map((langCode) => (
+                <button
+                  key={langCode}
+                  onClick={() => {
+                    setLanguage(langCode as 'en' | 'da' | 'ps');
+                    setIsLangDropdownOpen(false);
+                  }}
+                  className={`text-left px-4 2xl:px-6 py-2 2xl:py-4 text-sm 2xl:text-xl hover:bg-gray-50 transition-colors ${language === langCode ? 'text-blue-600 font-bold' : 'text-gray-600'}`}
+                >
+                  {languages[langCode]}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
+
+
 
         {/* Mobile Hamburger Button */}
         <button 
@@ -126,13 +117,13 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="#about" 
+                <Link 
+                  to="/about" 
                   onClick={() => setIsMenuOpen(false)}
                   className="block py-3 hover:text-blue-600 transition-colors border-b border-gray-100"
                 >
                   {t('about_us')}
-                </a>
+                </Link>
               </li>
               <li>
                 <Link 
@@ -143,15 +134,7 @@ export default function Navbar() {
                   {t('companies')}
                 </Link>
               </li>
-              <li>
-                <a 
-                  href="/#contact" 
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-3 text-blue-600"
-                >
-                  {t('contact')}
-                </a>
-              </li>
+
             </ul>
             
             {/* Mobile Language Selection */}

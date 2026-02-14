@@ -156,6 +156,15 @@ const translations: Record<Language, Record<string, string>> = {
      
      'slider_7_t1': "General Metal", 'slider_7_t2': "AND STEEL", 'slider_7_t3': "CONSTRUCTION.",
      'slider_7_desc': "Building a stronger future for Afghanistan through advanced metal processing and engineering. A committed member of the manufacturing union focusing on quality and sustainability.",
+
+     // Detailed About Content
+     'about_detailed_title': 'Union of Afghan Manufacturing Companies of Cans, Profiles, Iron and Galvanized Pipes',
+     'about_detailed_p1': 'The Union of Afghan Manufacturing Companies of Cans, Profiles, Iron and Galvanized Pipes was established in 2024 (1403 in the Afghan calendar) with the primary objective of fostering internal coordination among related manufacturing industries and strengthening cooperation with governmental and non-governmental institutions. With a strategic focus on enhancing both the quality and quantity of domestic production, the Union officially obtained its license to operate from the Ministry of Justice of the Islamic Emirate of Afghanistan on 30 October 2025 (8/8/1404) and commenced its practical activities thereafter.',
+     'about_detailed_p2': 'Although Afghanistan’s manufacturing industries are relatively new and in their formative stage, they have successfully pursued a path of growth and development by producing high-quality goods. By substituting domestic products for low-quality imports, these industries have played a vital role in meeting local market demands and significantly reducing dependence on foreign imports.',
+     'about_detailed_p3': 'Despite these achievements, domestic industries remain vulnerable to external threats such as dumping policies and unfair foreign competition. Therefore, comprehensive and coordinated efforts are essential to ensure further growth and sustainable development of this sector.',
+     'about_detailed_p4': 'The Union can leverage existing opportunities to attract governmental and non-governmental support, thereby creating the foundation for long-term industrial sustainability. Such measures not only prevent the collapse of domestic industries but also strengthen their resilience against internal and external challenges.',
+     'about_detailed_p5': 'One of the Union’s fundamental responsibilities is to establish effective communication and interaction among its members, as well as between the government and the manufacturing sector. By regulating industrial affairs, promoting technical knowledge, organizing market structures, and preventing unhealthy competition, the Union can play a crucial role in strengthening Afghanistan’s manufacturing base. Furthermore, the Union can facilitate purposeful collaboration between industries and other institutions, thereby contributing to the prosperity and sustainability of the sector and ultimately to the national economy.',
+     'about_detailed_p6': 'In the contemporary global context, particularly in developing countries, industrial unions are recognized as vital institutions for industrial growth and advancement. The active and effective presence of this Union in Afghanistan can pave the way for the development of can, profile, iron, and galvanized pipe industries. Through practical and coordinated measures, existing challenges can be addressed, enabling domestic industries not only to compete in the national market but also to gradually establish their position at the regional level.',
   },
   da: {
     // Nav
@@ -286,7 +295,7 @@ const translations: Record<Language, Record<string, string>> = {
     'slider_1_desc': 'شرکت تولیدی پروفیل آریا صنعت یک شرکت تجاری و صنعتی تولیدی است که در هرات، افغانستان فعالیت می‌کند. این کسب‌وکار به تولید پروفیل صنعتی و فعالیت‌های مرتبط با پردازش فولاد یا فلز شناخته می‌شود.',
     
     'slider_2_t1': 'فولاد افغانستان', 'slider_2_t2': 'تولیدی', 'slider_2_t3': 'اتحادیه فابریکات',
-    'slider_2_desc': 'حمایت از رشد صنعتی و یکپارچگی بخش‌های تولیدی در سراسر منطقه با تمرکز بر تعالی فولاد و فلز. تأمین اجزای زیرساختی اساسی برای پروژه‌های توسعه ملی.',
+    'slider_2_desc': 'حمایت از رشد صنعتی och یکپارچگی بخش‌های تولیدی در سراسر منطقه با تمرکز بر تعالی فولاد و فلز. تأمین اجزای زیرساختی اساسی برای پروژه‌های توسعه ملی.',
     
     'slider_3_t1': 'فولاد صنعت', 'slider_3_t2': 'آهن و فولاد', 'slider_3_t3': 'فابریکه',
     'slider_3_desc': 'پیشرو در صنایع سنگین و پردازش فولاد در افغانستان. مجهز به فناوری مدرن برای تحویل مواد ساختمانی با کیفیت بالا برای بازار محلی.',
@@ -302,6 +311,16 @@ const translations: Record<Language, Record<string, string>> = {
     
     'slider_7_t1': 'جنرال متال', 'slider_7_t2': 'و فولاد', 'slider_7_t3': 'ساختمانی',
     'slider_7_desc': 'ساخت آینده‌ای قوی‌تر برای افغانستان از طریق پردازش فلز پیشرفته و انجینرینگ. یک عضو متعهد اتحادیه تولیدی با تمرکز بر کیفیت و پایداری.',
+
+    // Detailed About Content
+    'about_detailed_title': 'اتحادیه شرکتهای تولیدی قوطی، پروفیل، نل آهنی و جستی افغانستان',
+    'about_detailed_p1': 'اتحادیه شرکتهای تولیدی قوطی، پروفیل، نل آهنی و جستی افغانستان با هدف ایجاد هماهنگی درون سازمانی میان صنایع تولیدی مرتبط و همچنین تقویت تعامل با نهادهای دولتی و غیردولتی، در سال ۱۴۰۳ خورشیدی تأسیس گردیده، و این اتحادیه با رویکرد ارتقای کیفیت و افزایش کمیت محصولات تولیدی، به تاریخ ۸/۸/۱۴۰۴ خورشیدی موفق به اخذ جواز رسمی فعالیت از وزارت عدلیه امارت اسلامی افغانستان شد و از همان تاریخ فعالیتهای عملی خویش را آغاز نمود.',
+    'about_detailed_p2': 'صنایع تولیدی افغانستان، هرچند تازه تأسیس و نوپا هستند، اما توانستهاند با عرضه و تولید محصولات باکیفیت، مسیر رشد و توسعه را در پیش گیرند. این صنایع با جایگزین نمودن تولیدات داخلی به جای کالاهای کم کیفیت وارداتی، نقش موثری در تأمین نیازهای بازار داخلی ایفا کرده و میزان وابستگی به واردات بسیاری از محصولات را به حداقل رسانده اند.',
+    'about_detailed_p3': 'با وجود این دستاوردها، صنایع داخلی درمعرض تهدید سیاستهای دامپینگ و رقابتهای ناسالم خارجی قرار دارند. بنابراین، تلاشهای گسترده و هماهنگ برای رشد و انکشاف بیشتر این بخش ضروری است.',
+    'about_detailed_p4': 'بناً این اتحادیه میتواند با بهره گیری از فرصتهای موجود، همکاری و حمایتهای دولتی و غیردولتی را جلب کرده و زمینه برای توسعه پایدار صنایع داخلی را فراهم سازند. چنین اقداماتی نه تنها از ورشکستگی و نابودی صنایع داخلی جلوگیری میکند، بلکه توان مقاومت در برابرتهدیدات خارجی و داخلی را افزایش میدهد.',
+    'about_detailed_p5': 'یکی از وظایف اساسی اتحادیه، ایجاد ارتباط و تعامل مؤثر میان اعضا و همچنین میان دولت و بخش صنایع تولیدی است. اتحادیه میتواند با تنظیم امور، توسعه دانش فنی، ایجاد نظم در بازار و جلوگیری از رقابتهای ناسالم، نقش مهمی در تقویت صنایع ایفا نماید. علاوه براین، اتحادیه میتواند تعامل هدفمند میان صنایع و سایر نهادها را شکل دهد و به رونق و پایداری این سکتور و در نهایت به اقتصاد ملی کشور کمک کنند.',
+    'about_detailed_p6': 'از آنجایکه درشرایط کنونی جهان به ویژه در کشورهای در حال توسعه، اتحادیههای صنعتی بهعنوان نهادهای حیاتی در رشد و انکشاف صنایع شناخته میشوند. حضور فعال و مؤثر این اتحادیه در افغانستان میتواند مسیر توسعه صنایع تولیدی قوطی، پروفیل، نل آهنی و جستی را هموار سازد و با اقدامات عملی و هماهنگ، مشکلات موجود را برطرف نماید. بدین ترتیب، صنایع داخلی نه تنها توان رقابت در بازار ملی را خواهند داشت، بلکه میتوانند به تدریج جایگاه خود را در سطح منطقه نیز تثبیت نمایند.',
+    'about_detailed_journey': 'سفر استراتژیک ما',
   },
   ps: {
     // Nav
@@ -448,6 +467,16 @@ const translations: Record<Language, Record<string, string>> = {
     
     'slider_7_t1': 'جنرال متال', 'slider_7_t2': 'او فولاد', 'slider_7_t3': 'ساختماني',
     'slider_7_desc': 'د پرمختللي فلزي پروسس او انجینرۍ له لارې د افغانستان لپاره د پیاوړې راتلونکې جوړول. د تولیدي اتحادیې ژمن غړی چې په کیفیت او پایښت تمرکز کوي.',
+
+    // Detailed About Content
+    'about_detailed_title': 'د افغانستان د قوطۍ، پروفیل، اوسپنیزو او جستي پایپونو د تولیدي شرکتونو اتحادیه',
+    'about_detailed_p1': 'د افغانستان د قوطۍ، پروفیل، اوسپنیزو او جستي پایپونو د تولیدي شرکتونو اتحادیه په ۱۴۰۳ هجري لمریز کال کې د دې لپاره تأسیس شوه چې د اړوندو تولیدي صنعتونو ترمنځ داخلي همغږي رامنځته کړي او د دولتي او غیر دولتي بنسټونو سره تعامل او همکاري پیاوړې کړي. دغه اتحادیه د تولیداتو د کیفیت او کمیت د لوړولو په موخه، د ۱۴۰۴ هجري لمریز کال د لړم په ۸مه نېټه د افغانستان د اسلامي امارت د عدلیې وزارت څخه رسمي جواز ترلاسه کړ او له همدې نېټې یې عملي فعالیتونه پیل کړل.',
+    'about_detailed_p2': 'که څه هم د افغانستان تولیدي صنایع تازه تأسیس او نوې دي، خو توانېدلي دي چې د لوړ کیفیت لرونکو محصولاتو په تولید سره د ودې او پرمختګ لاره خپله کړي. دغه صنایع د ټیټ کیفیت لرونکو وارداتي توکو پر ځای د کورنیو تولیداتو په وړاندې کولو سره د داخلي بازار اړتیاوې پوره کړي او د ډېرو محصولاتو واردات یې تر ډېره حده راکم کړي دي.',
+    'about_detailed_p3': 'سره له دې لاسته راوړنو، کورني صنایع د ډمپینگ سیاستونو او ناسالمې بهرنۍ سیالۍ له ګواښ سره مخ دي. له همدې امله، پراخې او همغږې هڅې د دې سکتور د لا زیاتې ودې او پراختیا لپاره اړینې دي.',
+    'about_detailed_p4': 'اتحادیه کولای شي له موجودو فرصتونو څخه ګټه واخلي، د دولتي او غیر دولتي ملاتړ جلب کړي او د کورنیو صنعتونو د پایدارې ودې زمینه برابره کړي. دا اقدامات نه یوازې د کورنیو صنعتونو له ورشکستګۍ او له منځه تلو مخنیوی کوي، بلکې د داخلي او خارجي ګواښونو پر وړاندې د هغوی د مقاومت وړتیا هم زیاتوي.',
+    'about_detailed_p5': 'د اتحادیې له اساسي دندو څخه یوه دا ده چې د غړو ترمنځ او همدارنګه د دولت او تولیدي سکتور ترمنځ اغېزمنه اړیکه او تعامل رامنځته کړي. اتحادیه کولای شي د چارو په تنظیم، د تخنیکي پوهې په پراختیا, د بازار په منظمولو او د ناسالمې سیالۍ په مخنیوي کې مهم رول ولوبوي. سربېره پر دې، اتحادیه کولای شي د صنعتونو او نورو بنسټونو ترمنځ هدفمند تعامل رامنځته کړي او د دې سکتور د رونق او پایدارۍ سبب شي چې په پایله کې د هېواد ملي اقتصاد ته مرسته وکړي.',
+    'about_detailed_p6': 'په اوسني نړیوال وضعیت کې، په ځانګړي ډول په پرمختیايي هېوادونو کې، صنعتي اتحادیې د صنعتونو د ودې او پراختیا لپاره حیاتي بنسټونه ګڼل کېږي. د دې اتحادیې فعال او اغېزمن حضور په افغانستان کې کولای شي د قوطۍ، پروفیل، اوسپنیزو او جستي پایپونو د تولیدي صنعتونو د ودې لاره هواره کړي او د عملي او همغږو اقداماتو له لارې موجودې ستونزې حل کړي. په دې توګه، کورني صنایع نه یوازې د ملي بازار په کچه د سیالۍ توان پیدا کوي، بلکې په تدریج سره کولای شي په سیمه ییزه کچه خپل ځای تثبیت کړي.',
+    'about_detailed_journey': 'زموږ ستراتیژیک سفر',
   }
 };
 
