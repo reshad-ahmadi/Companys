@@ -194,28 +194,28 @@ export default function AboutUs() {
 
                 <div className="space-y-6 2xl:space-y-10 text-gray-300 text-base md:text-lg 2xl:text-2xl leading-relaxed">
                   <div className="p-6 2xl:p-10 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10 hover:border-blue-500/20 transition-colors">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
                       <History className="text-blue-500 mt-1 flex-shrink-0" size={24} />
                       <p>{t('about_detailed_p1')}</p>
                     </div>
                   </div>
 
                   <div className="p-6 2xl:p-10 border border-white/5 rounded-2xl md:rounded-3xl">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
                       <TrendingUp className="text-blue-600 mt-1 flex-shrink-0" size={24} />
                       <p>{t('about_detailed_p2')}</p>
                     </div>
                   </div>
 
                   <div className="p-6 2xl:p-10 bg-blue-600/5 border border-blue-600/10 rounded-2xl md:rounded-3xl">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
                       <ShieldCheck className="text-blue-500 mt-1 flex-shrink-0" size={24} />
                       <p>{t('about_detailed_p3')}</p>
                     </div>
                   </div>
 
                   <div className="p-6 2xl:p-10 border border-white/5 rounded-2xl md:rounded-3xl">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
                       <Handshake className="text-blue-600 mt-1 flex-shrink-0" size={24} />
                       <p>{t('about_detailed_p4')}</p>
                     </div>
@@ -223,7 +223,7 @@ export default function AboutUs() {
 
                   <div className="space-y-6">
                     <div className="p-6 2xl:p-10 rounded-2xl md:rounded-3xl bg-white/5 border border-white/10">
-                      <div className="flex items-start gap-4">
+                      <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
                         <Briefcase className="text-blue-500 mt-1 flex-shrink-0" size={24} />
                         <p>{t('about_detailed_p5')}</p>
                       </div>
@@ -240,7 +240,7 @@ export default function AboutUs() {
                   </div>
 
                   <div className="p-6 2xl:p-10 bg-gradient-to-r from-blue-600/5 to-transparent border border-blue-500/20 rounded-2xl md:rounded-3xl">
-                    <div className="flex items-start gap-4">
+                    <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-4">
                       <Globe className="text-blue-500 mt-1 flex-shrink-0" size={24} />
                       <p>{t('about_detailed_p6')}</p>
                     </div>

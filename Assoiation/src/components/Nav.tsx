@@ -28,15 +28,15 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <nav className="fixed top-4 2xl:top-10 left-0 right-0 z-50 flex justify-center px-4 2xl:px-20">
+    <nav className="fixed top-4 2xl:top-6 left-0 right-0 z-50 flex justify-center px-4 2xl:px-10">
       <div 
-        className={`bg-white text-gray-800 py-3 2xl:py-8 px-6 md:px-8 2xl:px-20 flex items-center justify-between w-full max-w-7xl 2xl:max-w-[2200px] rounded-full transition-all duration-300 ${
+        className={`bg-white text-gray-800 py-3 2xl:py-4 px-6 md:px-8 2xl:px-12 flex items-center justify-between w-full max-w-7xl 2xl:max-w-[1600px] rounded-full transition-all duration-300 ${
           scrolled ? 'shadow-lg' : 'shadow-md'
         }`}
       >
         {/* Left: Association Name/Logo */}
-        <Link to="/" className="flex items-center gap-3 2xl:gap-5 group">
-          <div className="w-[40px] h-[40px] 2xl:w-[65px] 2xl:h-[65px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+        <Link to="/" className="flex items-center gap-3 2xl:gap-4 group">
+          <div className="w-[40px] h-[40px] 2xl:w-[50px] 2xl:h-[50px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
              {/* Using a placeholder icon/text until logo is confirmed for light bg */}
             <img 
               className="w-full h-full object-cover" 
@@ -45,13 +45,13 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-black text-blue-900 tracking-tighter text-lg 2xl:text-3xl">UAMC</span>
-            <span className="text-[10px] 2xl:text-[16px] font-bold text-gray-500 tracking-[0.2em]">AFGHANISTAN</span>
+            <span className="font-black text-blue-900 tracking-tighter text-lg 2xl:text-2xl">UAMC</span>
+            <span className="text-[10px] 2xl:text-sm font-bold text-gray-500 tracking-[0.2em]">AFGHANISTAN</span>
           </div>
         </Link>
         
         {/* Desktop Menu - Centered */}
-        <ul className="hidden md:flex items-center gap-8 2xl:gap-14 text-sm 2xl:text-xl font-bold text-gray-600 absolute left-1/2 transform -translate-x-1/2">
+        <ul className="hidden md:flex items-center gap-8 2xl:gap-10 text-sm 2xl:text-base font-bold text-gray-600 absolute left-1/2 transform -translate-x-1/2">
           <li>
             <Link to="/" className="hover:text-blue-600 transition-colors duration-300">{t('home')}</Link>
           </li>
@@ -67,9 +67,9 @@ export default function Navbar() {
         <div className="hidden md:block relative">
           <button 
             onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 2xl:px-10 py-2.5 2xl:py-4 rounded-full text-sm 2xl:text-xl font-bold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 2xl:px-8 py-2.5 2xl:py-3 rounded-full text-sm 2xl:text-base font-bold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2"
           >
-            <Globe className="w-4 h-4 2xl:w-6 2xl:h-6" />
+            <Globe className="w-4 h-4 2xl:w-5 2xl:h-5" />
             <span className="uppercase">{language}</span>
             <ChevronDown className={`w-3.5 h-3.5 2xl:w-5 2xl:h-5 transition-transform duration-300 ${isLangDropdownOpen ? 'rotate-180' : ''}`} />
           </button>
@@ -83,7 +83,7 @@ export default function Navbar() {
                     setLanguage(langCode as 'en' | 'da' | 'ps');
                     setIsLangDropdownOpen(false);
                   }}
-                  className={`text-left px-4 2xl:px-6 py-2 2xl:py-4 text-sm 2xl:text-xl hover:bg-gray-50 transition-colors ${language === langCode ? 'text-blue-600 font-bold' : 'text-gray-600'}`}
+                  className={`text-left px-4 2xl:px-6 py-2 2xl:py-3 text-sm 2xl:text-base hover:bg-gray-50 transition-colors ${language === langCode ? 'text-blue-600 font-bold' : 'text-gray-600'}`}
                 >
                   {languages[langCode]}
                 </button>

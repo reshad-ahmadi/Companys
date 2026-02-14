@@ -96,7 +96,7 @@ export default function TaxationServices() {
               }}
             ></div>
 
-            <div className="relative z-10 text-center max-w-4xl 2xl:max-w-7xl px-4 flex flex-col items-center">
+            <div className="relative z-10 text-center max-w-4xl 2xl:max-w-[1400px] px-4 flex flex-col items-center">
               {/* Title Section */}
               {Array.isArray(page.title) ? (
                 <div className="mb-8 md:mb-4 flex flex-col items-center">
@@ -105,8 +105,8 @@ export default function TaxationServices() {
                       key={i} 
                       className={`leading-tight inline-block ${
                         i >= 1 
-                          ? 'text-3xl md:text-[40px] lg:text-[58px] 2xl:text-[90px] text-brand-primary font-extrabold mt-1 uppercase tracking-tight' 
-                          : 'text-xl md:text-[24px] lg:text-[36px] 2xl:text-[56px] text-white font-bold opacity-90'
+                          ? 'text-3xl md:text-[40px] lg:text-[58px] 2xl:text-[50px] text-brand-primary font-extrabold mt-1 uppercase tracking-tight' 
+                          : 'text-xl md:text-[24px] lg:text-[36px] 2xl:text-[72px] text-white font-bold opacity-90'
                       }`}
                     >
                       {line}
@@ -121,15 +121,15 @@ export default function TaxationServices() {
 
               {/* Description Section */}
               {Array.isArray(page.desc) ? (
-                <div className="max-w-3xl md:max-w-md 2xl:max-w-5xl mx-auto space-y-6 md:space-y-1 2xl:space-y-4 mt-5 md:mt-[30px] 2xl:mt-[50px]">
+                <div className="max-w-3xl md:max-w-md 2xl:max-w-[1400px] mx-auto space-y-6 md:space-y-1 2xl:space-y-6 mt-5 md:mt-[30px] 2xl:mt-[60px]">
                   {page.desc.map((paragraph, i) => (
-                    <p key={i} className="text-[13px] sm:text-base md:text-[14px] lg:text-[18px] 2xl:text-[36px] text-gray-300 leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90">
+                    <p key={i} className="text-[13px] sm:text-base md:text-[14px] lg:text-[18px] 2xl:text-[30px] 2xl:max-w-[900px] text-gray-300 leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90">
                       {paragraph}
                     </p>
                   ))}
                 </div>
               ) : (
-                <p className="text-[13px] sm:text-base md:text-[16px] lg:text-[18px] 2xl:text-[36px] text-gray-300 max-w-3xl md:max-w-md 2xl:max-w-5xl mx-auto leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90 mt-5 md:mt-[30px] 2xl:mt-[50px]">
+                <p className="text-[13px] sm:text-base md:text-[16px] lg:text-[18px] 2xl:text-[45px] text-gray-300 max-w-3xl md:max-w-md 2xl:max-w-[1400px] mx-auto leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90 mt-5 md:mt-[30px] 2xl:mt-[60px]">
                   {page.desc}
                 </p>
               )}
@@ -141,13 +141,13 @@ export default function TaxationServices() {
         <div className="absolute top-1/2 left-0 right-0 flex justify-between px-4 md:px-12 transform -translate-y-1/2 z-20">
           <button
             onClick={() => setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages)}
-            className="p-1 sm:p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:bg-brand-primary hover:text-black transition-all group"
+            className="p-1 sm:p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:bg-brand-primary hover:text-black transition-all group text-white"
           >
             <span className="text-lg sm:text-xl md:text-2xl leading-none">&lsaquo;</span>
           </button>
           <button
             onClick={() => setCurrentPage((prev) => (prev + 1) % totalPages)}
-            className="p-1 sm:p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:bg-brand-primary hover:text-black transition-all group"
+            className="p-1 sm:p-1.5 md:p-2 rounded-full bg-white/5 border border-white/10 hover:bg-brand-primary hover:text-black transition-all group text-white"
           >
             <span className="text-lg sm:text-xl md:text-2xl leading-none">&rsaquo;</span>
           </button>
