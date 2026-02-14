@@ -19,7 +19,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3YdVJct9ZcDK7dGUqiHTVmW2rYihKtCGmLfH_zoTy0CMd6Gpa4t-59QCKpyA9u5hvqm_SyO32qp6a07wc0FIPSkXdHTV2AHrnMgaHo2aYwyA1KM_nTsiT_ClzR1rnQwcaqRF0f6o-onJ92WJrB-3Y4iE0JymTHYe84KTyWos1uyHkRDt5ti5o5NlSA7tBRNfr3fJtCuYcsbxCgqd6qMm9WT5Lslw232pkF1AUlkkbGfzelIptH4uod9Uv1JEBw5tSNzvuI376xuhz"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/45 to-slate-900/75"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/55 to-slate-900/85"></div>
       </div>
 
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center py-12 md:py-20 mt-[90px] md:mt-[70px] ">
