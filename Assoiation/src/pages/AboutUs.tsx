@@ -51,7 +51,7 @@ export default function AboutUs() {
       <Navbar />
       
       {/* Hero Section - Background Slideshow */}
-      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden 2xl:pt-[180px] 2xl:pb-[170px] ">
         {/* Slideshow Background - Balanced Visibility */}
         <div className="absolute inset-0 z-0">
           {slides.map((slide, index) => (
@@ -79,14 +79,14 @@ export default function AboutUs() {
             <span className="inline-block px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-sm 2xl:text-lg font-bold tracking-widest uppercase mb-6 2xl:mb-8 animate-fade-in">
               {t('about_header')}
             </span>
-            <h1 className="text-4xl md:text-6xl 2xl:text-9xl font-extrabold mb-8 2xl:mb-12 leading-[1.1] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-blue-500/50">
+            <h1 className="text-4xl md:text-6xl 2xl:text-8xl font-extrabold mb-8 2xl:mb-12 leading-[1.1] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-blue-500/50">
               {language === 'en' ? (
                 <>Building Afghanistan's <span className="text-blue-600">Industrial Future</span></>
               ) : (
                 t('about_detailed_title')
               )}
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl 2xl:text-4xl leading-relaxed max-w-4xl mx-auto font-medium">
+            <p className="text-gray-300 text-lg md:text-xl 2xl:text-2xl leading-relaxed max-w-4xl mx-auto font-medium">
               {t('about_desc')}
             </p>
           </div>
@@ -138,7 +138,7 @@ export default function AboutUs() {
           }`}
         >
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Side Navigation / Highlights (Left) */}
             <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-6 2xl:space-y-12">
@@ -261,7 +261,7 @@ export default function AboutUs() {
             missionAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             <div className="group relative p-8 2xl:p-16 rounded-[2rem] bg-white/5 border border-white/10 overflow-hidden hover:border-blue-500/50 transition-all duration-500">
               <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/5 rounded-full blur-[60px] -z-10 group-hover:bg-blue-600/15 transition-colors"></div>
               <div className="w-14 h-14 2xl:w-24 2xl:h-24 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-6 2xl:mb-10 group-hover:scale-110 transition-transform">
