@@ -105,8 +105,8 @@ export default function TaxationServices() {
                       key={i} 
                       className={`leading-tight inline-block ${
                         i >= 1 
-                          ? 'text-3xl md:text-[40px] lg:text-[58px] 2xl:text-[32px] text-brand-primary font-extrabold mt-1 uppercase tracking-tight' 
-                          : 'text-xl md:text-[24px] lg:text-[36px] 2xl:text-[40px] text-white font-bold opacity-90'
+                          ? 'text-3xl md:text-[40px] lg:text-[58px] 2xl:text-[102px] min-[2560px]:text-[150px] text-brand-primary font-extrabold mt-1 uppercase tracking-tight' 
+                          : 'text-xl md:text-[24px] lg:text-[36px] 2xl:text-[80px] min-[2560px]:text-[60px] text-white font-bold opacity-90'
                       }`}
                     >
                       {line}
@@ -123,7 +123,7 @@ export default function TaxationServices() {
               {Array.isArray(page.desc) ? (
                 <div className="max-w-3xl md:max-w-md 2xl:max-w-[1400px] mx-auto space-y-6 md:space-y-1 2xl:space-y-6 mt-5 md:mt-[30px] 2xl:mt-[60px]">
                   {page.desc.map((paragraph, i) => (
-                    <p key={i} className="text-[13px] sm:text-base md:text-[14px] lg:text-[18px] 2xl:text-[16px] 2xl:max-w-[900px] text-gray-300 leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90">
+                    <p key={i} className="text-[13px] sm:text-base md:text-[14px] lg:text-[18px] 2xl:text-[26px] 2xl:max-w-[900px] text-gray-300 leading-relaxed md:leading-snug 2xl:leading-relaxed text-center font-medium opacity-90">
                       {paragraph}
                     </p>
                   ))}
