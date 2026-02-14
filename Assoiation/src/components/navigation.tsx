@@ -37,7 +37,7 @@ export default function Navigation() {
   
       <div className="relative w-full overflow-hidden border-y border-white/10 bg-[#0B1222] py-8 text-center">
         {/* Main scrolling container */}
-        <div className="flex w-max animate-scroll hover:pause items-center gap-16 md:gap-24 lg:gap-32">
+        <div className="flex w-max animate-scroll hover:pause items-center gap-2 md:gap-24 lg:gap-32">
           {duplicatedImages.map((src, index) => (
             <div 
               key={index}

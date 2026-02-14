@@ -19,7 +19,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3YdVJct9ZcDK7dGUqiHTVmW2rYihKtCGmLfH_zoTy0CMd6Gpa4t-59QCKpyA9u5hvqm_SyO32qp6a07wc0FIPSkXdHTV2AHrnMgaHo2aYwyA1KM_nTsiT_ClzR1rnQwcaqRF0f6o-onJ92WJrB-3Y4iE0JymTHYe84KTyWos1uyHkRDt5ti5o5NlSA7tBRNfr3fJtCuYcsbxCgqd6qMm9WT5Lslw232pkF1AUlkkbGfzelIptH4uod9Uv1JEBw5tSNzvuI376xuhz"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/45 to-slate-900/75"></div>
       </div>
 
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center py-12 md:py-20 mt-[90px] md:mt-[70px] ">
@@ -56,8 +56,8 @@ const HeroSection = () => {
             descAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          The Union of Afghan Manufacturing Companies of Cans, Profiles, Iron and Galvanized Pipes was established in 2024 (1403 in the Afghan calendar) with the primary
-           objective of fostering internal coordination among related manufacturing industries and strengthening cooperation
+            The Union of Afghan Manufacturing Companies of Cans, Profiles, Iron and Galvanized Pipes was established in 2024 (1403 in the Afghan calendar) with the primary
+            objective of fostering internal coordination among related manufacturing industries and strengthening cooperation
             with governmental and non-governmental institutions. With a strategic focus on enhancing both the quality and quantity
              of domestic production,  of the Islamic 
              Emirate of Afghanistan on 30 October 2025 (8/8/1404) and commenced its practical activities thereafter.
