@@ -147,7 +147,7 @@ export default function Companies() {
       <Navbar />
       
       {/* Header */}
-      <div className="relative pt-12 pb-12 md:pt-24 md:pb-16 px-6 text-center">
+      <div className="relative pt-12 pb-12 md:pt-29 md:pb-16 px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
           <span className="text-blue-500">{t('our_members') || 'Our Members'}</span>
         </h1>
