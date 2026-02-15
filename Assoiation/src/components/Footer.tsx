@@ -39,8 +39,8 @@ const Footer = () => {
           
           {/* Brand Column */}
           <div className="col-span-2 lg:col-span-1 flex flex-col gap-5">
-            <Link to="/" className="inline-flex items-center gap-3 2xl:gap-5 group w-fit">
-              <div className="w-9 h-9 2xl:w-14 2xl:h-14 rounded-full overflow-hidden bg-white/10 flex items-center justify-center border border-white/10 group-hover:border-brand-primary/30 transition-colors">
+            <Link to="/" className="inline-flex items-center gap-4 2xl:gap-6 group w-fit">
+              <div className="w-12 h-12 2xl:w-20 2xl:h-20 rounded-full overflow-hidden bg-white/10 flex items-center justify-center border border-white/10 group-hover:border-brand-primary/30 transition-colors shadow-lg">
                 <img 
                   className="w-full h-full object-cover" 
                   src="/images/logo.jpeg" 
@@ -48,7 +48,7 @@ const Footer = () => {
                   style={{ maskImage: 'radial-gradient(circle, black 68%, transparent 70%)', WebkitMaskImage: 'radial-gradient(circle, black 68%, transparent 70%)' }}
                 />
               </div>
-              <span className="text-lg 2xl:text-3xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors">ASSOCIATION</span>
+              <span className="text-xl 2xl:text-4xl font-bold tracking-tight text-white group-hover:text-brand-primary transition-colors">UAMC</span>
             </Link>
             <p className="text-gray-400 leading-relaxed text-xs sm:text-sm 2xl:text-xl max-w-xs 2xl:max-w-md">
               {t('association_desc')}

@@ -17,9 +17,9 @@ const HeroSection = () => {
         <img
           alt="High-level boardroom meeting"
           className="w-full h-full object-cover"
-          src="/images/backgroundimage.png"
+          src="/images/hero10.png"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/5 to-slate-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/20 via-slate-900/50 to-[#0B1222]"></div>
       </div>
 
       <main className="relative z-10 flex-grow flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 text-center py-12 md:py-20 mt-[90px] md:mt-[70px] ">

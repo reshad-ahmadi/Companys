@@ -8,6 +8,25 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
   dir: 'ltr' | 'rtl';
+  companies: Company[];
+}
+
+export interface Company {
+  id: string;
+  image: string;
+  logo?: string;
+  title: string;
+  description: string;
+  factoryAddressLabel: string;
+  factoryAddress: string;
+  salesLabel: string;
+  salesAddress: string;
+  phoneLabel: string;
+  phone: string;
+  sloganLabel: string;
+  slogan: string;
+  email?: string;
+  website?: string;
 }
 
 const translations: Record<Language, Record<string, string>> = {
@@ -165,6 +184,42 @@ const translations: Record<Language, Record<string, string>> = {
      'about_detailed_p4': 'The Union can leverage existing opportunities to attract governmental and non-governmental support, thereby creating the foundation for long-term industrial sustainability. Such measures not only prevent the collapse of domestic industries but also strengthen their resilience against internal and external challenges.',
      'about_detailed_p5': 'One of the Union’s fundamental responsibilities is to establish effective communication and interaction among its members, as well as between the government and the manufacturing sector. By regulating industrial affairs, promoting technical knowledge, organizing market structures, and preventing unhealthy competition, the Union can play a crucial role in strengthening Afghanistan’s manufacturing base. Furthermore, the Union can facilitate purposeful collaboration between industries and other institutions, thereby contributing to the prosperity and sustainability of the sector and ultimately to the national economy.',
      'about_detailed_p6': 'In the contemporary global context, particularly in developing countries, industrial unions are recognized as vital institutions for industrial growth and advancement. The active and effective presence of this Union in Afghanistan can pave the way for the development of can, profile, iron, and galvanized pipe industries. Through practical and coordinated measures, existing challenges can be addressed, enabling domestic industries not only to compete in the national market but also to gradually establish their position at the regional level.',
+    
+    // Member - Shirzad Steel
+    'shirzad_title': "Shirzad Steel Profile Manufacturing Company",
+    'shirzad_desc': `Shirzad Steel Profile Manufacturing Company was established in 2023 in the Herat Industrial Park (Phase 2, Shokofa 4) and commenced its operations in the production of steel and galvanized square tubes and pipes in various sizes and thicknesses. With an annual production capacity exceeding 25,000 tons and a dedicated team of 25 skilled professionals, the company is recognized as one of the leading manufacturers in the pipe and profile industry in Afghanistan.\n\nBy utilizing advanced production technologies and experienced human resources, Shirzad Steel has become the first manufacturer in the country to produce 8-inch pipes with a thickness of 6 millimeters, marking a significant milestone in the development of Afghanistan’s profile manufacturing sector. The company’s products are distributed to all provinces across the country in order to meet domestic market demands.\n\nShirzad Steel’s primary objective is to enhance the quality of local manufacturing, strengthen the national industrial sector, and create a sustainable foundation for economic growth and job creation at the national level.`,
+    'shirzad_factory_label': "Factory Address:",
+    'shirzad_factory_addr': "Herat Industrial Park, Phase 2, Shokofa 4",
+    'shirzad_sales_label': "Sales Office Address:",
+    'shirzad_sales_addr': "Herat, Bakrabad Roundabout, Opposite Jada-e-Millat Road",
+    'shirzad_phone_label': "Contact Numbers:",
+    'shirzad_phones': "0708000500 – 0792101010",
+    'shirzad_slogan_label': "Company Slogan:",
+    'shirzad_slogan': "Shirzad Steel – A Distinct Path in the Nation’s Profile Industry",
+
+    // Member - Shamal Profile
+    'shamal_title': "Shamal Profile Industrial and Manufacturing Company",
+    'shamal_desc': `Shamal Profile Industrial and Manufacturing Company, holder of license number (D-01-1536), is officially registered with the esteemed Ministry of Industry and Commerce of Afghanistan. The company was founded in 2014 (1393) in Balkh Province, northern Afghanistan, under the leadership of Haji Mohammad Aslam Osmani as President and his partners.\n\nIn 2020 (1399), the company established its second branch in Kabul Industrial Parks. Furthermore, its third branch, equipped with modern machinery capable of producing various iron and galvanized profiles and pipes up to 6 millimeters, will soon be inaugurated in Mazar-e-Sharif.\n\nThe factories have a production capacity of 300 tons per 24 hours, with an annual capacity of 109,500 tons. The company produces profiles, sheets, iron and galvanized pipes, door frames, and structural steel for hangars. Products include profiles from 10x10 mm to 140x140 mm (up to 4mm thickness) and pipes from 1.3 cm to 8 inches (1-4mm thickness).`,
+    'shamal_factory_label': "Factory Addresses:",
+    'shamal_factory_addr': "Kabul Industrial Parks & Balkh Province",
+    'shamal_sales_label': "Sales Office:",
+    'shamal_sales_addr': "Mazar-e-Sharif & Kabul",
+    'shamal_phone_label': "Contact Numbers:",
+    'shamal_phones': "0799-XXX-XXX",
+    'shamal_slogan_label': "Company Slogan:",
+    'shamal_slogan': "Quality Production, National Pride",
+
+    // Member - Aria Sanat
+    'aria_title': "Aria Sanat Profile Manufacturing Company",
+    'aria_desc': `Aria Sanat Profile Manufacturing Company commenced its operations in 2011 with the aim of meeting domestic market demand, enhancing the quality of metal products, expanding trade, and creating sustainable employment opportunities in Afghanistan. Upon entering the market, the company began production with 18 types of profiles and, through continuous development and the adoption of modern technologies, has expanded its product portfolio to more than 250 diversified products. Today, Aria Sanat is recognized as one of the leading profile manufacturers in the country.\n\nThe Aria Sanat factory has been established on a land area of 7,000 square meters, and in recent years its total industrial built-up area has been expanded to over 10,000 square meters. This industrial complex comprises various sections, including fully equipped production halls, quality control laboratories, standard warehouses, and specialized departments such as factory management, engineering and production design, planning, research and development (R&D), quality control, and a central warehouse.\n\nSince the beginning of its activities, Aria Sanat has utilized advanced technologies imported from reputable Chinese companies and has strengthened its position through continuous technical and production cooperation with international partners. The company has established itself as one of the largest and most reliable manufacturers of steel profiles, square and rectangular tubes, and iron and galvanized pipes in a wide range of dimensions and thicknesses. This approach has ensured that Aria Sanat products remain competitive and trustworthy in terms of quality, delivery time, and pricing.\n\nAria Sanat’s quality policy is based on three fundamental principles:\n1) Manufacturing high-quality products in accordance with industrial standards\n2) Ensuring timely and reliable delivery to customers\n3) Offering competitive and reasonable prices\n\nWith a strong commitment to customer satisfaction and continuous improvement, Aria Sanat consistently strives to play an effective role in the industrial and economic growth of Afghanistan.`,
+    'aria_factory_label': "Factory Address:",
+    'aria_factory_addr': "Herat, Afghanistan, Industrial Park, Phase 2, Shokofa 4",
+    'aria_sales_label': "Sales Office Address:",
+    'aria_sales_addr': "Herat, Spin Adi Area, Adjacent to Jawaz Mosque, Molana Adina (RA)",
+    'aria_phone_label': "Contact Numbers:",
+    'aria_phones': "0799000500 / 0791646464",
+    'aria_slogan_label': "Company Slogan:",
+    'aria_slogan': "Aria Sanat – A Symbol of Quality and Pride in the Nation’s Profile Industry",
   },
   da: {
     // Nav
@@ -321,6 +376,42 @@ const translations: Record<Language, Record<string, string>> = {
     'about_detailed_p5': 'یکی از وظایف اساسی اتحادیه، ایجاد ارتباط و تعامل مؤثر میان اعضا و همچنین میان دولت و بخش صنایع تولیدی است. اتحادیه میتواند با تنظیم امور، توسعه دانش فنی، ایجاد نظم در بازار و جلوگیری از رقابتهای ناسالم، نقش مهمی در تقویت صنایع ایفا نماید. علاوه براین، اتحادیه میتواند تعامل هدفمند میان صنایع و سایر نهادها را شکل دهد و به رونق و پایداری این سکتور و در نهایت به اقتصاد ملی کشور کمک کنند.',
     'about_detailed_p6': 'از آنجایکه درشرایط کنونی جهان به ویژه در کشورهای در حال توسعه، اتحادیههای صنعتی بهعنوان نهادهای حیاتی در رشد و انکشاف صنایع شناخته میشوند. حضور فعال و مؤثر این اتحادیه در افغانستان میتواند مسیر توسعه صنایع تولیدی قوطی، پروفیل، نل آهنی و جستی را هموار سازد و با اقدامات عملی و هماهنگ، مشکلات موجود را برطرف نماید. بدین ترتیب، صنایع داخلی نه تنها توان رقابت در بازار ملی را خواهند داشت، بلکه میتوانند به تدریج جایگاه خود را در سطح منطقه نیز تثبیت نمایند.',
     'about_detailed_journey': 'سفر استراتژیک ما',
+
+    // Member - Shirzad Steel
+    'shirzad_title': "شرکت تولیدی پروفیل شیرزاد استیل",
+    'shirzad_desc': `شرکت تولیدی پروفیل شیرزاد استیل در سال ۱۴۰۲ هجری شمسی در شهرک صنعتی هرات (فاز ۲، شکوفه ۴) تأسیس گردیده و فعالیت خود را در زمینه تولید قوطی و لولههای آهنی و گالوانیزه در سایزها و ضخامتهای مختلف آغاز نموده است. این شرکت با ظرفیت تولید سالانه بیش از ۲۵٬۰۰۰ تن و بهرهمندی از یک تیم متشکل از ۲۵ نفر نیروی متخصص، بهعنوان یکی از شرکتهای پیشرو در صنعت تولید قوطی و لوله در افغانستان شناخته میشود.\n\nشیرزاد استیل با بهرهگیری از فناوریهای پیشرفته و نیروی انسانی مجرب، بهعنوان نخستین تولیدکننده لولههای ۸ اینچ با ضخامت ۶ میلیمتر در کشور، گامی مهم در توسعه صنعت پروفیل افغانستان برداشته است. محصولات این شرکت با هدف پاسخگویی به نیازهای بازار داخلی، به تمامی ولایات افغانستان عرضه میگردد.\n\nهدف اصلی شیرزاد استیل، ارتقای کیفیت تولیدات داخلی، تقویت زیرساختهای صنعتی کشور و ایجاد بستری پایدار برای رشد اقتصادی و اشتغالزایی در سطح ملی میباشد.`,
+    'shirzad_factory_label': "آدرس کارخانه:",
+    'shirzad_factory_addr': "هرات، شهرک صنعتی، فاز ۲، شکوفه ۴",
+    'shirzad_sales_label': "آدرس دفتر فروش:",
+    'shirzad_sales_addr': "هرات، فلکه بکرآباد، مقابل جاده ملت",
+    'shirzad_phone_label': "شمارههای تماس:",
+    'shirzad_phones': "0708000500 – 0792101010",
+    'shirzad_slogan_label': "شعار شرکت:",
+    'shirzad_slogan': "شیرزاد استیل؛ خطی متفاوت در صنعت پروفیل کشور",
+
+    // Member - Shamal Profile
+    'shamal_title': "شرکت صنعتی و تولیدی شمال پروفیل",
+    'shamal_desc': `شرکت صنعتی و تولیدی شمال پروفیل دارنده نمبر جواز (D-01-1536) ثبت وراجستر شده وزارت محترم صنعت و تجارت افغانستان بوده که درسال 1393 (2014) در شمال افغانستان ولایت بلخ تاسیس گردید. این فابریکه درسال 1399 (2020) نماینده گی دوم خویش را در پارک های صنعتی کابل تاسیس نمود.\n\nهمچنان نماینده گی سوم این فابریکه با ماشین آلات مدرن که ظرفیت تولید انواع پروفیل ونل های آهنی و جستی الی 6 ملی را دارد در مزار شریف عنقریب افتتاح میگردد. فابریکات این شرکت ظرفیت تولید 300 تن در 24 ساعت وسالانه ظرفیت تولید 109،500 تن را دارد.\n\nاین فابریکه انواع مختلف پروفیل (10x10 الی 140x140)، قطی، نل های آهنی و جستی (1.3 سانتی الی 8 انچ)، چوکات های آهنی دروازه و آهن آلات ساخت هنگرها را تولید میکند.`,
+    'shamal_factory_label': "آدرس فابریکه:",
+    'shamal_factory_addr': "پارک های صنعتی کابل و ولایت بلخ",
+    'shamal_sales_label': "دفتر فروش:",
+    'shamal_sales_addr': "مزار شریف و کابل",
+    'shamal_phone_label': "شماره های تماس:",
+    'shamal_phones': "0799-XXX-XXX",
+    'shamal_slogan_label': "شعار شرکت:",
+    'shamal_slogan': "تولید با کیفیت، افتخار ملی",
+
+    // Member - Aria Sanat
+    'aria_title': "شرکت تولید پروفیل آریا صنعت",
+    'aria_desc': `شرکت تولید پروفیل آریا صنعت فعالیت خود را در سال ۱۳۹۰ با هدف تأمین نیاز بازار داخلی، ارتقای کیفیت محصولات فلزی، توسعه تجارت و ایجاد فرصتهای شغلی پایدار در افغانستان آغاز نمود. این شرکت در بدو ورود به بازار، تولید ۱۸ نوع پروفیل را در دستور کار خود قرار داد و با تکیه بر توسعه مستمر و بهکارگیری فناوریهای نوین، امروزه با بیش از ۲۵۰ نوع محصول متنوع، بهعنوان یکی از پیشگامان صنعت تولید پروفیل در کشور شناخته میشود.\n\nکارخانه آریا صنعت در زمینی به مساحت ۷٬۰۰۰ متر مربع احداث گردیده و طی سالهای اخیر، زیربنای صنعتی آن به بیش از ۱۰٬۰۰۰ متر مربع توسعه یافته است. این مجموعه صنعتی شامل بخشهای مختلفی از جمله سالنهای تولید مجهز، آزمایشگاههای کنترل کیفیت، انبارهای استاندارد و واحدهای تخصصی نظیر مدیریت کارخانه، مهندسی و طراحی تولید، برنامهریزی، تحقیق و توسعه (R&D)، کنترل کیفیت و انبار مرکزی میباشد.\n\nآریا صنعت از ابتدای فعالیت خود با بهرهگیری از فناوریهای پیشرفته وارداتی از شرکتهای معتبر چینی و از طریق همکاریهای فنی و تولیدی مستمر با شرکای بینالمللی، جایگاه خود را بهعنوان یکی از بزرگترین و معتبرترین تولیدکنندگان پروفیل، قوطی و لولههای آهنی و گالوانیزه در ابعاد و ضخامتهای متنوع تثبیت نموده است. این رویکرد موجب شده است محصولات این شرکت از نظر کیفیت، زمان تحویل و قیمت، همواره رقابتپذیر و قابل اعتماد باشند.\n\nخطمشی کیفیت شرکت آریا صنعت بر سه اصل اساسی استوار است:\n1) تولید محصولات با کیفیت مطابق با استانداردهای صنعتی\n2) تحویل بهموقع و مطمئن به مشتریان\n3) ارائه قیمت های رقابتی و منطقی\n\nآریا صنعت با تعهد به رضایت مشتریان و بهبود مستمر، همواره در مسیر ایفای نقشی مؤثر در رشد صنعتی و اقتصادی افغانستان گام برمیدارد.`,
+    'aria_factory_label': "آدرس کارخانه:",
+    'aria_factory_addr': "افغانستان، هرات، شهرک صنعتی، فاز ۲، شکوفه ۴",
+    'aria_sales_label': "آدرس دفتر فروشات:",
+    'aria_sales_addr': "هرات، اسپین اَدی، جوار مسجد جامع مولانا آدینه (رح)",
+    'aria_phone_label': "شماره‌های تماس:",
+    'aria_phones': "0799000500 / 0791646464",
+    'aria_slogan_label': "شعار شرکت:",
+    'aria_slogan': "آریا صنعت؛ نماد کیفیت و افتخار در صنعت پروفیل کشور",
   },
   ps: {
     // Nav
@@ -477,6 +568,42 @@ const translations: Record<Language, Record<string, string>> = {
     'about_detailed_p5': 'د اتحادیې له اساسي دندو څخه یوه دا ده چې د غړو ترمنځ او همدارنګه د دولت او تولیدي سکتور ترمنځ اغېزمنه اړیکه او تعامل رامنځته کړي. اتحادیه کولای شي د چارو په تنظیم، د تخنیکي پوهې په پراختیا, د بازار په منظمولو او د ناسالمې سیالۍ په مخنیوي کې مهم رول ولوبوي. سربېره پر دې، اتحادیه کولای شي د صنعتونو او نورو بنسټونو ترمنځ هدفمند تعامل رامنځته کړي او د دې سکتور د رونق او پایدارۍ سبب شي چې په پایله کې د هېواد ملي اقتصاد ته مرسته وکړي.',
     'about_detailed_p6': 'په اوسني نړیوال وضعیت کې، په ځانګړي ډول په پرمختیايي هېوادونو کې، صنعتي اتحادیې د صنعتونو د ودې او پراختیا لپاره حیاتي بنسټونه ګڼل کېږي. د دې اتحادیې فعال او اغېزمن حضور په افغانستان کې کولای شي د قوطۍ، پروفیل، اوسپنیزو او جستي پایپونو د تولیدي صنعتونو د ودې لاره هواره کړي او د عملي او همغږو اقداماتو له لارې موجودې ستونزې حل کړي. په دې توګه، کورني صنایع نه یوازې د ملي بازار په کچه د سیالۍ توان پیدا کوي، بلکې په تدریج سره کولای شي په سیمه ییزه کچه خپل ځای تثبیت کړي.',
     'about_detailed_journey': 'زموږ ستراتیژیک سفر',
+
+    // Member - Shirzad Steel
+    'shirzad_title': "د شیرزاد استیل د پروفیل تولیدي شرکت",
+    'shirzad_desc': `د شیرزاد استیل د پروفیل تولیدي شرکت په ۱۴۰۲ لمریز کال کې د هرات په صنعتي ښارګوټي (فاز ۲، شکوفه ۴) کې تأسیس شو او د اوسپنیزو او ګالوانیزه قوطیو او پایپونو د تولید په برخه کې یې خپل فعالیت پیل کړ. دغه شرکت د بېلابېلو اندازو او ضخامتونو محصولاتو په تولید سره، د کلني تولید له ۲۵٬۰۰۰ ټنو څخه د زیاتو ظرفیت او د ۲۵ کسیز مسلکي کاري ټیم په لرلو، د افغانستان د قوطیو او پایپونو د تولید په صنعت کې د مخکښو شرکتونو له ډلې څخه شمېرل کېږي.\n\nشیرزاد استیل د پرمختللې ټکنالوژۍ او تجربه لرونکي بشري ځواک په کارولو سره، په هېواد کې د لومړي ځل لپاره د ۶ مليمتر ضخامت لرونکي ۸ اینچه پایپونو تولید پیل کړی، چې دا د افغانستان د پروفیل صنعت د ودې په برخه کې یو مهم ګام بلل کېږي. د دغه شرکت محصولات د کورني بازار د اړتیاوو د پوره کولو په موخه، د افغانستان ټولو ولایتونو ته عرضه کېږي.\n\nد شیرزاد استیل اساسي موخه د کورنیو تولیداتو د کیفیت لوړول، د هېواد د صنعتي بنسټونو پیاوړتیا، او په ملي کچه د اقتصادي ودې او کاري فرصتونو د رامنځته کولو لپاره د دوامدارې زمینې برابرول دي.`,
+    'shirzad_factory_label': "د فابریکې پته:",
+    'shirzad_factory_addr': "هرات، صنعتي ښارګوټی، فاز ۲، شکوفه ۴",
+    'shirzad_sales_label': "د پلور دفتر پته:",
+    'shirzad_sales_addr': "هرات، بکرآباد څلورلارې، د ملت سړک ته مخامخ",
+    'shirzad_phone_label': "د اړیکې شمېرې:",
+    'shirzad_phones': "0708000500 – 0792101010",
+    'shirzad_slogan_label': "د شرکت شعار:",
+    'shirzad_slogan': "شیرزاد استیل؛ د هېواد د پروفیل صنعت کې یوه بېله لاره",
+
+    // Member - Shamal Profile
+    'shamal_title': "شمال پروفایل صنعتي او تولیدي شرکت",
+    'shamal_desc': `شمال پروفایل صنعتي او تولیدي شرکت د جواز نمبر (D-01-1536) لرونکی دی چې په کال ۱۳۹۳ (۲۰۱۴) کې د بلخ ولایت په شمالي افغانستان کې تاسیس شو. په کال ۱۳۹۹ (۲۰۲۰) کې دغه شرکت خپله دوهمه نمایندګي د کابل په صنعتي پارکونو کې پرانستله.\n\nهمدارنګه، د دې فابریکې درېیمه نمایندګي چې له عصري ماشینونو سره مجهزه ده، ډېر ژر په مزارشریف کې پرانستل کېږي. د دې شرکت فابریکې د ۲۴ ساعتونو په موده کې د ۳۰۰ ټنه تولید ظرفیت لري او کلنی تولید یې ۱۰۹،۵۰۰ ټنه دی.\n\nدغه شرکت بېلابېلو پروفیلونو (۱۰x۱۰ تر ۱۴۰x۱۴۰)، قطیو، د اوسپنې او جستي پایپونو (۱.۳ سانتي تر ۸ انچه)، او د هنګرونو د جوړولو اوسپنیزو موادو تولید او عرضه کوي.`,
+    'shamal_factory_label': "د فابریکې پته:",
+    'shamal_factory_addr': "د کابل صنعتي پارکونه او بلخ ولایت",
+    'shamal_sales_label': "د پلور دفتر:",
+    'shamal_sales_addr': "مزارشریف او کابل",
+    'shamal_phone_label': "د اړیکې شمېرې:",
+    'shamal_phones': "0799-XXX-XXX",
+    'shamal_slogan_label': "د شرکت شعار:",
+    'shamal_slogan': "با کیفیت تولید، ملي ویاړ",
+
+    // Member - Aria Sanat
+    'aria_title': "د آریا صنعت د پروفیل تولیدي شرکت",
+    'aria_desc': `د آریا صنعت د پروفیل تولیدي شرکت په ۱۳۹۰ کال کې د افغانستان د کورني بازار د اړتیاوو د پوره کولو، د فلزي محصولاتو د کیفیت د لوړولو، د سوداګرۍ د پراختیا او د دوامدارو کاري فرصتونو د رامنځته کولو په موخه خپل فعالیت پیل کړ. دغه شرکت په پیل کې د ۱۸ ډوله پروفیلونو په تولید سره بازار ته داخل شو او د دوامدار پرمختګ او د نوې ټکنالوژۍ د کارونې له لارې، نن ورځ له ۲۵۰ څخه زیات ډول ډول محصولات تولیدوي او د هېواد د پروفیل تولید په صنعت کې د مخکښو شرکتونو له ډلې څخه شمېرل کېږي.\n\ د آریا صنعت فابریکه په ۷٬۰۰۰ متره مربع ځمکه کې جوړه شوې ده او په وروستیو کلونو کې یې صنعتي زیربنا له ۱۰٬۰۰۰ متره مربع څخه زیاته شوې ده. دغه صنعتي مجموعه بېلابېل برخې لري، چې پکې سمبال تولیدي سالونونه، د کیفیت د کنټرول لابراتوارونه، معیاري ګودامونه، او تخصصي څانګې لکه د فابریکې مدیریت، د تولید انجینري او ډیزاین، پلان جوړونه، څېړنه او پراختیا (R&D)، د کیفیت کنټرول او مرکزي ګودام شامل دي.\n\nآریا صنعت د خپل فعالیت له پیل راهیسې د چین له معتبرو شرکتونو څخه وارد شوې پرمختللې ټکنالوژۍ کارولې دي او د نړیوالو شریکانو سره د دوامدارو تخنیکي او تولیدي همکاریو له لارې یې خپل ځای د پروفیل، قوطۍ، او د اوسپنې او ګالوانیزه پایپونو د سترو او باوري تولیدوونکو په توګه تثبیت کړی دی. دغه تګلاره د دې لامل شوې چې د آریا صنعت محصولات د کیفیت، د سپارلو وخت او بیې له پلوه تل سیالي وړ او د باور وړ پاتې شي.\n\nد آریا صنعت د کیفیت تګلاره پر درې اساسي اصولو ولاړه ده:\n1) د صنعتي معیارونو سره سم د لوړ کیفیت محصولاتو تولید\n2) پیرېدونکو ته پر وخت او باوري سپارنه\n3) د سیالۍ وړ او منطقي بیو وړاندې کول\n\nآریا صنعت د پیرېدونکو د رضایت او دوامدار پرمختګ ته ژمن پاتې شوی او تل هڅه کوي چې د افغانستان د صنعتي او اقتصادي ودې په بهیر کې اغېزمن رول ولوبوي.`,
+    'aria_factory_label': "د فابریکې پته:",
+    'aria_factory_addr': "هرات، افغانستان، صنعتي ښارګوټی، 2 فاز، 4 شکوفه",
+    'aria_sales_label': "د پلور دفتر پته:",
+    'aria_sales_addr': "هرات، د سپین اډي، د مولانا آدینه (رح) جامع جومات ته څېرمه",
+    'aria_phone_label': "د اړیکې شمېرې:",
+    'aria_phones': "0799000500 / 0791646464",
+    'aria_slogan_label': "د شرکت شعار:",
+    'aria_slogan': "آریا صنعت؛ د هېواد د پروفیل صنعت کې د کیفیت او ویاړ نښه",
   }
 };
 
@@ -501,8 +628,58 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
 
   const dir = language === 'en' ? 'ltr' : 'rtl';
 
+  const companies: Company[] = [
+    {
+      id: 'shirzad-steel',
+      image: '/images/steel-profiles.jpg',
+      logo: '/images/SHIRZAD_PROFILE.jpg-removebg-preview (1).png',
+      title: t('shirzad_title'),
+      description: t('shirzad_desc'),
+      factoryAddressLabel: t('shirzad_factory_label'),
+      factoryAddress: t('shirzad_factory_addr'),
+      salesLabel: t('shirzad_sales_label'),
+      salesAddress: t('shirzad_sales_addr'),
+      phoneLabel: t('shirzad_phone_label'),
+      phone: t('shirzad_phones'),
+      sloganLabel: t('shirzad_slogan_label'),
+      slogan: t('shirzad_slogan')
+    },
+    {
+      id: 'shamal-profile',
+      image: '/images/slide-pipe-production.jpg',
+      logo: '/images/SHAMAL_PROFILE.jpg-removebg-preview (1).png',
+      title: t('shamal_title'),
+      description: t('shamal_desc'),
+      factoryAddressLabel: t('shamal_factory_label'),
+      factoryAddress: t('shamal_factory_addr'),
+      salesLabel: t('shamal_sales_label'),
+      salesAddress: t('shamal_sales_addr'),
+      phoneLabel: t('shamal_phone_label'),
+      phone: t('shamal_phones'),
+      sloganLabel: t('shamal_slogan_label'),
+      slogan: t('shamal_slogan')
+    },
+    {
+      id: 'aria-sanat',
+      image: '/images/slide-ariya-profile.jpg',
+      logo: '/images/ARIYA_PROFILE.jpg-removebg-preview (1).png',
+      title: t('aria_title'),
+      description: t('aria_desc'),
+      factoryAddressLabel: t('aria_factory_label'),
+      factoryAddress: t('aria_factory_addr'),
+      salesLabel: t('aria_sales_label'),
+      salesAddress: t('aria_sales_addr'),
+      phoneLabel: t('aria_phone_label'),
+      phone: t('aria_phones'),
+      sloganLabel: t('aria_slogan_label'),
+      slogan: t('aria_slogan'),
+      email: 'Ariasanat.Profile@gmail.com',
+      website: 'www.Aria-sanat.com'
+    }
+  ];
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, dir }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, dir, companies }}>
       {children}
     </LanguageContext.Provider>
   );

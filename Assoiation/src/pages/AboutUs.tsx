@@ -119,7 +119,7 @@ export default function AboutUs() {
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {stats.map((stat, index) => (
-              <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div key={index} className="flex flex-col items-center text-center">
                 <span className="text-5xl 2xl:text-8xl font-black text-blue-600 mb-2 2xl:mb-4">{stat.number}</span>
                 <h3 className="text-lg 2xl:text-3xl font-bold mb-2">{stat.label}</h3>
                 <p className="text-gray-400 text-sm 2xl:text-xl leading-relaxed max-w-xs">{stat.description}</p>
@@ -172,8 +172,8 @@ export default function AboutUs() {
                 </ul>
               </div>
 
-              {/* Additional Side Image - Reduced footprint */}
-              <div className="rounded-3xl overflow-hidden border border-white/10 aspect-[3/2] lg:aspect-[4/5] max-w-sm mx-auto shadow-2xl">
+              {/* Additional Side Image - Full width */}
+              <div className="rounded-3xl overflow-hidden border border-white/10 aspect-[3/2] lg:aspect-[4/5] w-full shadow-2xl">
                 <img 
                   src="/images/slide-steel-union.jpg" 
                   alt="Industrial Complex" 
@@ -187,7 +187,7 @@ export default function AboutUs() {
               <div className="prose prose-invert max-w-none">
                 <div className="flex items-center gap-4 mb-6 2xl:mb-10">
                   <div className="w-10 md:w-16 h-1 bg-blue-600 rounded-full"></div>
-                  <h2 className="text-2xl md:text-4xl 2xl:text-6xl font-black italic">
+                  <h2 className="text-2xl md:text-4xl 2xl:text-6xl font-bold tracking-tight">
                     {t('about_detailed_journey')}
                   </h2>
                 </div>
@@ -228,8 +228,8 @@ export default function AboutUs() {
                         <p>{t('about_detailed_p5')}</p>
                       </div>
                     </div>
-                    {/* Inline Image - Smaller with better constraints */}
-                    <div className="rounded-3xl overflow-hidden border border-white/10 h-48 md:h-64 2xl:h-96 relative group max-w-3xl mx-auto shadow-xl">
+                    {/* Inline Image - Full width */}
+                    <div className="rounded-2xl md:rounded-3xl overflow-hidden border border-white/10 h-48 md:h-64 2xl:h-96 relative group w-full shadow-xl">
                       <img 
                         src="/images/hero_meeting.png" 
                         alt="Communication and Planning" 

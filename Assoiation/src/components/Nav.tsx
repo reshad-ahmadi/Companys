@@ -35,8 +35,8 @@ export default function Navbar() {
         }`}
       >
         {/* Left: Association Name/Logo */}
-        <Link to="/" className="flex items-center gap-3 2xl:gap-4 group">
-          <div className="w-[40px] h-[40px] 2xl:w-[50px] 2xl:h-[50px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+        <Link to="/" className="flex items-center gap-4 2xl:gap-6 group">
+          <div className="w-[50px] h-[50px] 2xl:w-[70px] 2xl:h-[70px] rounded-full overflow-hidden bg-blue-600 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300 shadow-md">
              {/* Using a placeholder icon/text until logo is confirmed for light bg */}
             <img 
               className="w-full h-full object-cover" 
@@ -45,8 +45,7 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="font-black text-blue-900 tracking-tighter text-lg 2xl:text-2xl">UAMC</span>
-            <span className="text-[10px] 2xl:text-sm font-bold text-gray-500 tracking-[0.2em]">AFGHANISTAN</span>
+            <span className="font-black text-blue-900 tracking-tighter text-xl 2xl:text-4xl">UAMC</span>
           </div>
         </Link>
         
