@@ -70,7 +70,7 @@ export default function About() {
           {/* New Link to About Page */}
           <div className="flex justify-center mt-12">
             <Link 
-              to="/about" 
+              to="/about#about-hero" 
               className="group flex items-center gap-2 bg-blue-600/10 hover:bg-blue-600 border border-blue-600/20 hover:border-blue-600 text-blue-500 hover:text-white px-8 py-4 rounded-full text-lg 2xl:text-2xl font-bold transition-all duration-300"
             >
               Discover More About Us

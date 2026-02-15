@@ -5,6 +5,32 @@ import Navbar from '../components/Nav';
 import Footer from '../components/Footer';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
+const Counter = ({ target, isVisible, suffix = "" }: { target: number, isVisible: boolean, suffix?: string }) => {
+  const [count, setCount] = React.useState(0);
+  
+  React.useEffect(() => {
+    if (!isVisible) return;
+    
+    let start = 0;
+    const duration = 800; // 0.8 seconds (very fast)
+    const increment = target / (duration / 16); // 60fps approx
+    
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [isVisible, target]);
+
+  return <>{count}{suffix}</>;
+};
+
 export default function AboutUs() {
   const { t, language } = useLanguage();
   const statsAnimation = useScrollAnimation();
@@ -15,17 +41,20 @@ export default function AboutUs() {
 
   const stats = [
     {
-      number: "50+",
+      target: 50,
+      suffix: "+",
       label: t('stats_factories_label'),
       description: t('stats_factories_desc'),
     },
     {
-      number: "15+",
+      target: 15,
+      suffix: "+",
       label: t('stats_provinces_label'),
       description: t('stats_provinces_desc'),
     },
     {
-      number: "100%",
+      target: 100,
+      suffix: "%",
       label: t('stats_quality_label'),
       description: t('stats_quality_desc'),
     }
@@ -40,6 +69,21 @@ export default function AboutUs() {
   ];
 
   React.useEffect(() => {
+    // Handle scrolling to hash if present
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
+  React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
@@ -51,7 +95,7 @@ export default function AboutUs() {
       <Navbar />
       
       {/* Hero Section - Background Slideshow */}
-      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden 2xl:pt-[180px] 2xl:pb-[170px] ">
+      <section id="about-hero" className="relative min-h-screen flex items-center pt-20 overflow-hidden 2xl:pt-[180px] 2xl:pb-[170px] ">
         {/* Slideshow Background - Balanced Visibility */}
         <div className="absolute inset-0 z-0">
           {slides.map((slide, index) => (
@@ -76,7 +120,7 @@ export default function AboutUs() {
 
         <div className="max-w-full mx-auto px-6 lg:px-12 2xl:px-[250px] relative w-full text-center">
           <div className="max-w-5xl mx-auto">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-sm 2xl:text-lg font-bold tracking-widest uppercase mb-6 2xl:mb-8 animate-fade-in">
+            <span className="relative -top-[20px] inline-block px-4 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-400 text-sm 2xl:text-lg font-bold tracking-widest uppercase mb-6 2xl:mb-8 animate-fade-in">
               {t('about_header')}
             </span>
             <h1 className="text-4xl md:text-6xl 2xl:text-8xl font-extrabold mb-8 2xl:mb-12 leading-[1.1] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-blue-500/50">
@@ -86,26 +130,26 @@ export default function AboutUs() {
                 t('about_detailed_title')
               )}
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl 2xl:text-2xl leading-relaxed max-w-4xl mx-auto font-medium">
+            <p className="text-gray-300 text-lg md:text-xl 2xl:text-2xl leading-relaxed max-w-4xl lg:max-w-[800px] xl:max-w-[800px] mx-auto font-medium">
               {t('about_desc')}
             </p>
           </div>
-          
-          {/* Slideshow Indicators */}
-          <div className="flex justify-center gap-2 mt-12">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-blue-600 w-8' 
-                    : 'bg-white/30 hover:bg-white/50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
+        </div>
+
+        {/* Slideshow Indicators - Positioned at bottom */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex justify-center gap-2 z-30">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide 
+                  ? 'bg-blue-600 w-8' 
+                  : 'bg-white/30 hover:bg-white/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </section>
 
@@ -120,7 +164,9 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col items-center text-center">
-                <span className="text-5xl 2xl:text-8xl font-black text-blue-600 mb-2 2xl:mb-4">{stat.number}</span>
+                <span className="text-5xl 2xl:text-8xl font-black text-blue-600 mb-2 2xl:mb-4">
+                  <Counter target={stat.target} isVisible={statsAnimation.isVisible} suffix={stat.suffix} />
+                </span>
                 <h3 className="text-lg 2xl:text-3xl font-bold mb-2">{stat.label}</h3>
                 <p className="text-gray-400 text-sm 2xl:text-xl leading-relaxed max-w-xs">{stat.description}</p>
               </div>

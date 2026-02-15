@@ -58,7 +58,7 @@ export default function Navbar() {
             <Link to="/about" className="hover:text-blue-600 transition-colors duration-300">{t('about_us')}</Link>
           </li>
           <li>
-            <Link to="/members" className="hover:text-blue-600 transition-colors duration-300">{t('companies')}</Link>
+            <Link to="/members#members-section" className="hover:text-blue-600 transition-colors duration-300">{t('companies')}</Link>
           </li>
         </ul>
 
@@ -126,7 +126,7 @@ export default function Navbar() {
               </li>
               <li>
                 <Link 
-                  to="/members" 
+                  to="/members#members-section" 
                   onClick={() => setIsMenuOpen(false)}
                   className="block py-3 hover:text-blue-600 transition-colors border-b border-gray-100"
                 >

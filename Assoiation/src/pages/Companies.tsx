@@ -8,7 +8,7 @@ const CompanyCard = ({ company, t, language }: { company: any, t: any, language:
   const [isExpanded, setIsExpanded] = React.useState(false);
   
   return (
-    <div className="group relative bg-[#0B161B] rounded-[2.5rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/10">
+    <div className="group relative bg-[#0B161B] rounded-[1.5rem] overflow-hidden border border-white/5 hover:border-blue-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-900/10">
       {/* Decorative background blur */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none -z-0 group-hover:bg-blue-600/10 transition-colors"></div>
 
@@ -38,22 +38,24 @@ const CompanyCard = ({ company, t, language }: { company: any, t: any, language:
         </div>
 
         {/* Content Section */}
-        <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 flex flex-col justify-center">
+        <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 flex flex-col">
           
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-white group-hover:text-blue-400 transition-colors leading-tight">
-              {company.title}
-            </h2>
-            <div className="w-20 h-1 bg-blue-500 rounded-full mt-4 group-hover:w-32 transition-all duration-500"></div>
-          </div>
-          
-          <div className={`prose prose-invert prose-lg max-w-none text-gray-300 mb-6 leading-relaxed whitespace-pre-line border-l-2 border-blue-500/30 pl-6 transition-all duration-700 overflow-hidden ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-32 opacity-70'}`}>
-            {company.description}
+          <div className="flex-grow">
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-white group-hover:text-blue-400 transition-colors leading-tight">
+                {company.title}
+              </h2>
+              <div className="w-20 h-1 bg-blue-500 rounded-full mt-4 group-hover:w-32 transition-all duration-500"></div>
+            </div>
+            
+            <div className={`prose prose-invert prose-lg max-w-none text-gray-300 mb-6 leading-relaxed whitespace-pre-line border-l-2 border-blue-500/30 pl-6 transition-all duration-700 overflow-hidden ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-32 opacity-70'}`}>
+              {company.description}
+            </div>
           </div>
 
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center gap-2 text-blue-500 font-bold uppercase tracking-widest text-sm mb-10 hover:text-blue-400 transition-colors group/btn"
+            className="flex items-center gap-2 text-blue-500 font-bold uppercase tracking-widest text-sm mt-auto mb-[6px] hover:text-blue-400 transition-colors group/btn w-fit"
           >
             {isExpanded ? t('view_less') || 'View Less' : t('view_details') || 'View Details'}
             <ChevronDown size={18} className={`transition-transform duration-500 ${isExpanded ? 'rotate-180' : ''}`} />
@@ -142,12 +144,27 @@ export default function Companies() {
   const { language, t, companies } = useLanguage();
   const isRTL = language === 'da' || language === 'ps';
 
+  React.useEffect(() => {
+    // Handle scrolling to hash if present
+    const hash = window.location.hash;
+    if (hash) {
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   return (
     <div className={`bg-[#050E12] min-h-screen text-white ${isRTL ? 'rtl' : 'ltr'}`} dir={isRTL ? 'rtl' : 'ltr'}>
       <Navbar />
       
       {/* Header */}
-      <div className="relative pt-12 pb-12 md:pt-29 md:pb-16 px-6 text-center">
+      <div id="members-section" className="relative pt-12 pb-12 md:pt-29 md:pb-16 px-6 text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
           <span className="text-blue-500">{t('our_members') || 'Our Members'}</span>
         </h1>
